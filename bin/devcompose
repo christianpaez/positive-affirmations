@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ ! -f config/master.key ]; then
+  echo "Missing config/master.key — run: echo \"\$(openssl rand -hex 16)\" > config/master.key"
+  exit 1
+fi
+
+export RAILS_MASTER_KEY=$(< config/master.key)
+
+docker compose up --build "$@"
