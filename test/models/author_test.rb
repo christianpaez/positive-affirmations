@@ -2,7 +2,7 @@ require "test_helper"
 
 class AuthorTest < ActiveSupport::TestCase
   test "is valid with a name and slug" do
-    author = Author.new(name: "Oscar Wilde", slug: "oscar-wilde")
+    author = Author.new(name: "Jane Austen", slug: "jane-austen")
     assert author.valid?
   end
 
@@ -30,7 +30,7 @@ class AuthorTest < ActiveSupport::TestCase
     assert_includes duplicate.errors[:slug], "has already been taken"
   end
 
-  teste "has many quotes" do
+  test "has many quotes" do
     assert_equal 1, authors(:aamilne).quotes.count
     assert_kind_of Quote, authors(:aamilne).quotes.first
   end

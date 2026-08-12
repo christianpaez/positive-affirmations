@@ -1,10 +1,10 @@
 require "test_helper"
 
 class CategoryTest < ActiveSupport::TestCase
-  test "is valid with a name and slug" do
-    category = Category.new(name: "inspirational", slug: "inspirational")
-    assert category.valid?
-  end
+test "is valid with a name and slug" do
+  category = Category.new(name: "gratitude", slug: "gratitude")
+  assert category.valid?
+end
 
   test "is invalid without a name" do
     category = Category.new(slug: "inspirational")
