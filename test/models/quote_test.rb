@@ -32,4 +32,9 @@ class QuoteTest < ActiveSupport::TestCase
     assert_includes quote.categories, categories(:inspirational)
     assert_includes quote.categories, categories(:motivation)
   end
+
+  test "random returns a quote" do
+    quote = Quote.random
+    assert_kind_of Quote, quote
+  end
 end
