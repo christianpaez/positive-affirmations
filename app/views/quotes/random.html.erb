@@ -1,6 +1,10 @@
 
 <% if @quote.present? %>
- <%= @quote.body %>
+  <p><%= @quote.author.name %></p>
+  <p><%= @quote.body %></p>
+  
+  <p><%= @quote.categories.pluck :name %></p>
+
  <% else %>
  no result
  <% end %>
