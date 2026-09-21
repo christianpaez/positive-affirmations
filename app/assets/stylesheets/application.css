@@ -8,3 +8,6 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+turbo-frame#quote[busy] {
+  opacity: 0.5;
+}

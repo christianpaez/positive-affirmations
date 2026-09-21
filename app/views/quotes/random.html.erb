@@ -1,10 +1,12 @@
+<%= turbo_frame_tag "quote" do %>
+  <% if @quote.present? %>
+    <p><%= @quote.author.name %></p>
+    <p><%= @quote.body %></p>
 
-<% if @quote.present? %>
-  <p><%= @quote.author.name %></p>
-  <p><%= @quote.body %></p>
-  
-  <p><%= @quote.categories.pluck :name %></p>
+    <p><%= @quote.categories.pluck :name %></p>
 
- <% else %>
- no result
- <% end %>
+  <% else %>
+    no result
+  <% end %>
+  <%= link_to "Another quote", quotes_random_path %>
+<% end %>
